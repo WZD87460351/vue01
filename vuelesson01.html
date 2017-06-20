@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div class="app">
+        <input type="text" name="" id="inp" v-model="message" v-bind:title="message">
+        <input type="text" name="" id="" v-bind:placeholder="message">
+        <div id="content">
+            {{message}}
+        </div>
+        
+        <button v-on:click="toggle">click</button>
+        <div class="box" v-if="seen"></div>
+    </div>
+    <script>
+        var app = new Vue({
+            el : ".app",
+            data:{
+                message:'good',
+                seen:true
+            },
+            methods:{
+                toggle:function(){
+                    this.seen = !this.seen;
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>
